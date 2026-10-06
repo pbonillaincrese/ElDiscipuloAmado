@@ -156,10 +156,10 @@
   .recursos-head{text-align:center;max-width:700px;margin:0 auto 3rem;}
   .recursos-head .eyebrow{font-family:'Majesty','Caveat',cursive;font-size:1.5rem;color:var(--terracotta);display:block;margin-bottom:.2rem;}
   .recursos-head h2{font-size:clamp(2.4rem,5.5vw,3.8rem);line-height:1.08;}
-  .recursos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;}
+  .recursos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
   .recurso-card{
     background:rgba(255,255,255,.55);border:1px solid rgba(28,43,69,.1);border-radius:14px;
-    padding:2.2rem 2rem;display:flex;flex-direction:column;align-items:flex-start;
+    padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:flex-start;
     scroll-margin-top:90px;
     transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
   }
@@ -175,7 +175,7 @@
     margin-top:auto;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
     color:var(--navy);background:var(--blue-soft);padding:.35rem .9rem;border-radius:999px;
   }
-  @media(max-width:760px){.recursos-grid{grid-template-columns:1fr;}}
+  @media(max-width:900px){.recursos-grid{grid-template-columns:1fr;}}
 
   /* SUBTÍTULOS: Poppins Light, mayúsculas, espaciado 343 */
   h2,h3{
@@ -188,9 +188,110 @@
   }
   .section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);}
   .recursos-head h2{font-size:clamp(1.8rem,4vw,2.8rem);}
-  .recurso-card h3{font-size:1.25rem;}
+  .recurso-card h3{font-size:1.05rem;}
   .split h2{font-size:clamp(1.4rem,2.6vw,1.9rem);}
   @media(max-width:600px){h2,h3{letter-spacing:.15em;}}
+
+  /* GALERÍA */
+  .galeria-head{text-align:center;max-width:720px;margin:0 auto 2.6rem;}
+  .galeria-head .eyebrow{font-family:'Majesty','Caveat',cursive;font-size:1.5rem;color:var(--terracotta);display:block;margin-bottom:.2rem;}
+  .galeria-head h2{font-size:clamp(1.6rem,3.6vw,2.4rem);}
+  .galeria-head p{margin:1.2rem auto 0;color:var(--navy);opacity:.85;font-size:1.05rem;}
+  .carousel{position:relative;max-width:900px;margin:0 auto;}
+  .carousel-track{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    border-radius:12px;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-slide{
+    flex:0 0 100%;scroll-snap-align:center;aspect-ratio:3/2;
+    background:var(--paper-2);border:1.5px dashed var(--blue);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.95rem;
+  }
+  .carousel-slide img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
+  .carousel-btn{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+    width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;
+    background:rgba(246,242,231,.92);color:var(--navy);font-size:1.4rem;line-height:1;
+    box-shadow:0 4px 14px rgba(28,43,69,.2);transition:background .2s,color .2s;
+  }
+  .carousel-btn:hover{background:var(--terracotta);color:#fff;}
+  .carousel-btn.prev{left:-12px;}
+  .carousel-btn.next{right:-12px;}
+  .carousel-dots{display:flex;justify-content:center;gap:.55rem;margin-top:1.2rem;}
+  .carousel-dots button{
+    width:10px;height:10px;border-radius:50%;border:none;padding:0;cursor:pointer;
+    background:var(--blue-soft);transition:background .2s,transform .2s;
+  }
+  .carousel-dots button.active{background:var(--terracotta);transform:scale(1.3);}
+  @media(max-width:600px){.carousel-btn{width:38px;height:38px;}.carousel-btn.prev{left:6px;}.carousel-btn.next{right:6px;}}
+
+  /* MENÚ Y ENLACES DEL PIE: Poppins Light */
+  .nav-links a,.footer-links a{font-family:'Poppins Light','Poppins',sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:.08em;}
+
+  /* DONACIÓN */
+  .donacion-head{text-align:center;max-width:680px;margin:0 auto 2.4rem;}
+  .donacion-head .eyebrow{font-family:'Majesty','Caveat',cursive;font-size:1.5rem;color:var(--terracotta);display:block;margin-bottom:.2rem;}
+  .donacion-head h2{font-size:clamp(1.6rem,3.6vw,2.4rem);}
+  .donacion-head p{margin:1.2rem auto 0;color:var(--navy);opacity:.85;font-size:1.05rem;}
+  .donacion-box{
+    max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);
+    border:1px solid rgba(28,43,69,.1);border-radius:14px;overflow:hidden;
+    box-shadow:0 10px 28px rgba(28,43,69,.07);
+  }
+  .banco-bar{
+    background:var(--navy);color:var(--paper);padding:1.1rem 1.8rem;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem;
+    font-family:'Poppins Light','Poppins',sans-serif;
+  }
+  .banco-bar span{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;}
+  .banco-bar strong{font-size:1.2rem;font-weight:700;letter-spacing:.06em;}
+  .dona-table{width:100%;border-collapse:collapse;}
+  .dona-table th,.dona-table td{padding:1.15rem 1.8rem;text-align:left;vertical-align:middle;}
+  .dona-table thead th{
+    font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;font-size:.78rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta);
+    background:var(--paper-2);border-bottom:1px solid rgba(28,43,69,.12);
+  }
+  .dona-table tbody tr{border-bottom:1px solid rgba(28,43,69,.08);}
+  .dona-table tbody tr:last-child{border-bottom:none;}
+  .dona-table .moneda{font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;color:var(--navy);letter-spacing:.06em;}
+  .dona-table .moneda small{display:block;font-weight:300;opacity:.7;letter-spacing:.04em;font-size:.82rem;}
+  .dona-val{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;}
+  .dona-val code{font-family:'Inter',monospace;font-size:.95rem;color:var(--navy);letter-spacing:.03em;word-break:break-all;}
+  .copy-btn{
+    display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;padding:0;
+    border:1px solid #d6d6d6;background:transparent;color:#9a9a9a;border-radius:6px;
+    cursor:pointer;transition:background .2s,color .2s,border-color .2s;
+  }
+  .copy-btn:hover{background:#eee;color:#666;border-color:#bdbdbd;}
+  .copy-btn svg{width:14px;height:14px;}
+  .copy-btn .ico-check{display:none;}
+  .copy-btn.copied{background:#dcebdd;color:#2b5c33;border-color:#2b5c33;}
+  .copy-btn.copied .ico-copy{display:none;}
+  .copy-btn.copied .ico-check{display:block;}
+  .sinpe-row{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;
+    padding:1.3rem 1.8rem;background:var(--paper-2);border-top:1px solid rgba(28,43,69,.12);
+  }
+  .sinpe-row .label{font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);}
+  .sinpe-row .num{font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:.08em;color:var(--navy);margin-right:.7rem;}
+  .datos-cta{max-width:900px;margin:2rem auto 0;text-align:center;}
+  .datos-cta h3{font-size:1.1rem;margin-bottom:.6rem;}
+  .datos-cta p{max-width:520px;margin:0 auto 1.3rem;color:var(--navy);opacity:.85;}
+  .datos-form{max-width:480px;margin:0 auto;text-align:left;}
+  @media(max-width:700px){
+    .dona-table thead{display:none;}
+    .dona-table,.dona-table tbody,.dona-table tr,.dona-table td{display:block;width:100%;}
+    .dona-table td{padding:.5rem 1.4rem;}
+    .dona-table td.moneda{padding-top:1.2rem;}
+    .dona-table tr td:last-child{padding-bottom:1.2rem;}
+    .dona-table td[data-label]::before{
+      content:attr(data-label);display:block;font-family:'Poppins Light','Poppins',sans-serif;
+      font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);font-weight:700;margin-bottom:.15rem;
+    }
+    .banco-bar,.sinpe-row{padding-left:1.4rem;padding-right:1.4rem;}
+  }
 
   .fade-in{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0);}
@@ -208,7 +309,7 @@
       <li><a href="#entrenamiento">Entrenamiento</a></li>
       <li><a href="#folleto">Folleto</a></li>
       <li><a href="#donacion">Donación</a></li>
-      <li><a href="#preguntas">Preguntas</a></li>
+      <li><a href="#galeria">Galería</a></li>
     </ul>
   </nav>
 </header>
@@ -235,7 +336,7 @@
       <div>
         <p>Nos alegra que seas parte del entrenamiento El Discípulo Amado. Este será tu espacio durante las próximas 6 semanas, donde encontrarás las sesiones grabadas, tu folleto digital y materiales exclusivos que te acompañarán en este recorrido.</p>
         <p>Todo lo que hacemos en INCRESE tiene la misión de cultivar un movimiento para la multiplicación de servidores-líderes emergentes comprometidos con el evangelio de Jesucristo y llenos del Espíritu Santo.</p>
-        <p style="font-family:'Fraunces',serif;font-size:1.15rem;color:var(--navy);">¡Gracias por ser parte de la familia de INCRESE, bienvenidos!</p>
+        <p style="font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:1rem;color:var(--navy);">¡Gracias por ser parte de la familia de INCRESE, bienvenidos!</p>
       </div>
     </div>
   </div>
@@ -266,43 +367,98 @@
       <article class="recurso-card fade-in" id="folleto">
         <span class="recurso-icon" aria-hidden="true">📖</span>
         <span class="eyebrow">profundiza</span>
-        <h3>Folleto</h3>
+        <h3>Folleto digital</h3>
         <p>Estamos escribiendo el folleto de estudio de "El Discípulo Amado", con lecturas, preguntas y espacio para tus notas. Pronto podrás verlo y descargarlo aquí.</p>
-        <span class="recurso-tag">próximamente</span>
-      </article>
-      <article class="recurso-card fade-in" id="donacion">
-        <span class="recurso-icon" aria-hidden="true">🤍</span>
-        <span class="eyebrow">apoya este estudio</span>
-        <h3>Donación</h3>
-        <p>Muy pronto habilitaremos las formas de donar específicamente para este estudio. Mientras tanto, si deseas apoyar a INCRESE en general, escríbenos a <a href="mailto:contacto@increse.org" style="color:var(--terracotta);">contacto@increse.org</a>.</p>
         <span class="recurso-tag">próximamente</span>
       </article>
     </div>
   </div>
 </section>
 
-<!-- PREGUNTAS -->
-<section id="preguntas">
+<!-- DONACIÓN -->
+<section id="donacion">
   <div class="container">
-    <div class="section-head fade-in" style="margin-left:auto;margin-right:auto;text-align:center;">
-      <span class="eyebrow">comunidad</span>
-      <h2>Deja tu pregunta o comentario</h2>
+    <div class="donacion-head fade-in">
+      <span class="eyebrow">apoya a INCRESE</span>
+      <h2>Formas de donar</h2>
+      <p>Puedes realizar tu donación por transferencia bancaria o SINPE Móvil con los siguientes datos:</p>
     </div>
-    <div class="fade-in" style="max-width:520px;margin:0 auto;text-align:center;">
-      <p style="margin-bottom:2rem;color:var(--navy);opacity:.8;">Puedes escribir con tu nombre o dejarlo en blanco para enviarlo de forma anónima. Tu mensaje nos llega directo.</p>
-      <form action="https://formspree.io/f/PENDIENTE-DE-CONECTAR" method="POST" id="preguntaForm">
+    <div class="donacion-box fade-in">
+      <div class="banco-bar"><span>Banco</span><strong>BAC San José</strong></div>
+      <table class="dona-table">
+        <thead>
+          <tr><th>Cuenta</th><th>IBAN</th><th>Cuenta BAC</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="moneda">Colones<small>CRC</small></td>
+            <td data-label="IBAN"><div class="dona-val"><code>CR75010200009700612891</code><button type="button" class="copy-btn" data-copy="CR75010200009700612891" aria-label="Copiar" title="Copiar"><svg class="ico-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><svg class="ico-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></td>
+            <td data-label="Cuenta BAC"><div class="dona-val"><code>970061289</code><button type="button" class="copy-btn" data-copy="970061289" aria-label="Copiar" title="Copiar"><svg class="ico-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><svg class="ico-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></td>
+          </tr>
+          <tr>
+            <td class="moneda">Dólares<small>USD</small></td>
+            <td data-label="IBAN"><div class="dona-val"><code>CR31010200009700612713</code><button type="button" class="copy-btn" data-copy="CR31010200009700612713" aria-label="Copiar" title="Copiar"><svg class="ico-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><svg class="ico-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></td>
+            <td data-label="Cuenta BAC"><div class="dona-val"><code>970061271</code><button type="button" class="copy-btn" data-copy="970061271" aria-label="Copiar" title="Copiar"><svg class="ico-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><svg class="ico-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="sinpe-row">
+        <span class="label">SINPE Móvil</span>
+        <div class="dona-val"><span class="num">8882-2525</span><button type="button" class="copy-btn" data-copy="88822525" aria-label="Copiar" title="Copiar"><svg class="ico-copy" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><svg class="ico-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div>
+      </div>
+    </div>
+    <div class="datos-cta fade-in">
+      <h3>Quiero agregar mis datos</h3>
+      <p>Déjanos tu información para poder contactarte y agradecerte personalmente por tu donación.</p>
+      <form action="https://formspree.io/f/myeyeeze" method="POST" id="datosForm" class="datos-form">
         <div class="field">
-          <label for="preguntaNombre">Tu nombre (opcional)</label>
-          <input id="preguntaNombre" name="Nombre" type="text" placeholder="Déjalo en blanco para ser anónimo">
+          <label for="datosNombre">Nombre completo</label>
+          <input id="datosNombre" name="Nombre completo" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="preguntaTexto">Tu pregunta o comentario</label>
-          <textarea id="preguntaTexto" name="Pregunta" rows="5" placeholder="Escribe aquí..." required></textarea>
+          <label for="datosWhatsapp">WhatsApp</label>
+          <input id="datosWhatsapp" name="WhatsApp" type="tel" autocomplete="tel" placeholder="Ej: 8888-8888" required>
         </div>
-        <button type="submit" class="submit-btn">Enviar</button>
-        <div class="form-success" id="preguntaSuccess">¡Gracias por escribirnos! Tu mensaje ya nos llegó y te responderemos pronto.</div>
-        <div class="form-error" id="preguntaError">Hubo un problema al enviar tu mensaje. Intenta de nuevo o escríbenos a contacto@increse.org.</div>
+        <div class="field">
+          <label for="datosCorreo">Correo electrónico</label>
+          <input id="datosCorreo" name="email" type="email" autocomplete="email" required>
+        </div>
+        <button type="submit" class="submit-btn">Enviar mis datos</button>
+        <div class="form-success" id="datosSuccess">¡Gracias! Recibimos tus datos y nos pondremos en contacto contigo pronto.</div>
+        <div class="form-error" id="datosError">Hubo un problema al enviar tus datos. Intenta de nuevo o escríbenos a contacto@increse.org.</div>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-head fade-in">
+      <span class="eyebrow">galería de INCRESE</span>
+      <h2>Donde el movimiento cobra vida</h2>
+      <p>Una mirada a los espacios, personas y lugares donde INCRESE cobra vida. Cada encuentro es una oportunidad para aprender, compartir y seguir cultivando líderes.</p>
+    </div>
+    <div class="carousel fade-in" id="galeriaCarousel">
+      <button type="button" class="carousel-btn prev" aria-label="Foto anterior">‹</button>
+      <!-- Para agregar una foto, reemplaza el texto "Foto N" por: <img src="tu-foto.jpg" alt="descripción"> -->
+      <div class="carousel-track">
+        <div class="carousel-slide">Foto 1</div>
+        <div class="carousel-slide">Foto 2</div>
+        <div class="carousel-slide">Foto 3</div>
+        <div class="carousel-slide">Foto 4</div>
+        <div class="carousel-slide">Foto 5</div>
+        <div class="carousel-slide">Foto 6</div>
+      </div>
+      <button type="button" class="carousel-btn next" aria-label="Foto siguiente">›</button>
+      <div class="carousel-dots">
+        <button type="button" aria-label="Ir a la foto 1" class="active"></button>
+        <button type="button" aria-label="Ir a la foto 2"></button>
+        <button type="button" aria-label="Ir a la foto 3"></button>
+        <button type="button" aria-label="Ir a la foto 4"></button>
+        <button type="button" aria-label="Ir a la foto 5"></button>
+        <button type="button" aria-label="Ir a la foto 6"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -314,10 +470,10 @@
     <a href="#entrenamiento">Entrenamiento</a>
     <a href="#folleto">Folleto</a>
     <a href="#donacion">Donación</a>
-    <a href="#preguntas">Preguntas</a>
+    <a href="#galeria">Galería</a>
     <a href="mailto:contacto@increse.org">Contacto</a>
   </div>
-  <p class="copy">INCRESE — Instituto Nacional de Crecimiento y Recursos Eclesiológicos Saludables</p>
+  <p class="copy">INCRESE — Instituto Natural de Crecimiento y Recursos Eclesiológicos Saludables</p>
 </footer>
 
 <script>
@@ -336,32 +492,59 @@
   }, { threshold: 0.15 });
   faders.forEach(el => observer.observe(el));
 
-  // Formulario de Preguntas (Formspree)
-  const preguntaForm = document.getElementById('preguntaForm');
-  const preguntaSuccess = document.getElementById('preguntaSuccess');
-  const preguntaError = document.getElementById('preguntaError');
-  if (preguntaForm) {
-    preguntaForm.addEventListener('submit', e => {
+
+  // Galería (carrusel)
+  (function(){
+    const root = document.getElementById('galeriaCarousel');
+    if (!root) return;
+    const track = root.querySelector('.carousel-track');
+    const slides = track.children;
+    const dots = root.querySelectorAll('.carousel-dots button');
+    const go = i => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+    const current = () => Math.round(track.scrollLeft / track.clientWidth);
+    root.querySelector('.prev').addEventListener('click', () => go((current() - 1 + slides.length) % slides.length));
+    root.querySelector('.next').addEventListener('click', () => go((current() + 1) % slides.length));
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    track.addEventListener('scroll', () => {
+      const c = current();
+      dots.forEach((d, i) => d.classList.toggle('active', i === c));
+    });
+  })();
+
+  // Botones Copiar (donación)
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy;
+      const done = () => {
+        btn.classList.add('copied');
+        btn.title = '¡Copiado!';
+        setTimeout(() => { btn.classList.remove('copied'); btn.title = 'Copiar'; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {});
+      }
+    });
+  });
+
+  // Formulario de datos (Formspree)
+  const datosForm = document.getElementById('datosForm');
+  if (datosForm) {
+    const ok = document.getElementById('datosSuccess');
+    const err = document.getElementById('datosError');
+    datosForm.addEventListener('submit', e => {
       e.preventDefault();
-      const formData = new FormData(preguntaForm);
-      preguntaSuccess.classList.remove('show');
-      preguntaError.classList.remove('show');
-      fetch(preguntaForm.action, {
+      ok.classList.remove('show');
+      err.classList.remove('show');
+      fetch(datosForm.action, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
-        body: formData
+        body: new FormData(datosForm)
       })
-        .then(response => {
-          if (response.ok) {
-            preguntaSuccess.classList.add('show');
-            preguntaForm.reset();
-          } else {
-            preguntaError.classList.add('show');
-          }
+        .then(r => {
+          if (r.ok) { ok.classList.add('show'); datosForm.reset(); }
+          else { err.classList.add('show'); }
         })
-        .catch(() => {
-          preguntaError.classList.add('show');
-        });
+        .catch(() => err.classList.add('show'));
     });
   }
 </script>
