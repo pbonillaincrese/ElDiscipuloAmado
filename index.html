@@ -406,6 +406,61 @@
     .pdf-toolbar{justify-content:center;}
   }
 
+  /* ENTRENAMIENTO (VIDEOS) */
+  #entrenamiento{scroll-margin-top:90px;}
+  .entre-head{text-align:center;max-width:680px;margin:0 auto 2.2rem;}
+  .entre-head .eyebrow{font-family:'Majesty','Caveat',cursive;font-size:1.5rem;color:var(--terracotta);display:block;margin-bottom:.2rem;}
+  .entre-head h2{font-size:clamp(1.6rem,3.6vw,2.4rem);}
+  .entre-head p{margin:1.2rem auto 0;color:var(--navy);opacity:.85;font-size:1.05rem;}
+  .entre-layout{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:1.6rem;}
+  @media(min-width:900px){.entre-layout{grid-template-columns:1.7fr 1fr;align-items:start;}}
+  .video-frame{
+    position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;
+    box-shadow:0 14px 34px rgba(28,43,69,.2);
+  }
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-now{margin-top:1rem;}
+  .video-now small{display:block;font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);}
+  .video-now h3{font-size:1.05rem;margin-top:.3rem;}
+  .ep-box{background:rgba(255,255,255,.55);border:1px solid rgba(28,43,69,.1);border-radius:14px;padding:1.2rem;}
+  .ep-box > h3{font-size:.85rem;margin:.2rem .4rem 1rem;}
+  .ep-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem;}
+  .ep-item{
+    display:flex;gap:.8rem;align-items:center;width:100%;text-align:left;cursor:pointer;
+    background:transparent;border:1.5px solid transparent;border-radius:10px;padding:.5rem;
+    font-family:inherit;color:var(--navy);transition:background .2s,border-color .2s;
+  }
+  .ep-item:hover{background:rgba(255,255,255,.8);}
+  .ep-item.active{background:#fff;border-color:var(--terracotta);}
+  .ep-thumb{
+    position:relative;flex:0 0 120px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 55%,var(--blue) 100%);
+    box-shadow:0 4px 12px rgba(28,43,69,.18);
+  }
+  .ep-ph{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-left:.8rem;
+    color:#fff;background:
+      radial-gradient(circle at 85% 20%,rgba(223,169,74,.35),transparent 45%),
+      radial-gradient(circle at 10% 110%,rgba(200,106,61,.35),transparent 50%);
+  }
+  .ep-ph b{font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;font-size:1.7rem;line-height:1;letter-spacing:.04em;}
+  .ep-ph i{font-style:normal;font-family:'Poppins Light','Poppins',sans-serif;font-weight:300;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-top:.25rem;}
+  .ep-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .ep-thumb::after{
+    content:'';position:absolute;right:.5rem;bottom:.5rem;width:30px;height:30px;border-radius:50%;
+    background:var(--terracotta) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9.5 7l8 5-8 5z'/%3E%3C/svg%3E") center/18px no-repeat;
+    box-shadow:0 3px 8px rgba(0,0,0,.3);transition:transform .2s;
+  }
+  .ep-item:hover .ep-thumb::after{transform:scale(1.12);}
+  .ep-info{display:flex;flex-direction:column;gap:.2rem;min-width:0;}
+  .ep-num{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .5rem;font-family:'Poppins Light','Poppins',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta);}
+  .ep-title{font-size:.92rem;line-height:1.35;font-weight:500;}
+  .ep-new{
+    display:inline-block;margin-left:0;padding:.1rem .5rem;border-radius:999px;background:var(--terracotta);color:#fff;
+    font-size:.62rem;letter-spacing:.1em;vertical-align:middle;
+  }
+  @media(max-width:600px){.ep-thumb{flex-basis:104px;}.ep-ph b{font-size:1.4rem;}}
+
   .fade-in{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0);}
 </style>
@@ -471,12 +526,12 @@
         <p>Estamos grabando los primeros episodios del podcast de INCRESE "El Discípulo Amado". Vuelve pronto para escuchar la primera conversación.</p>
         <span class="recurso-tag">próximamente</span>
       </article>
-      <article class="recurso-card fade-in" id="entrenamiento">
+      <article class="recurso-card fade-in">
         <span class="recurso-icon" aria-hidden="true">▶️</span>
         <span class="eyebrow">aprende</span>
         <h3>Entrenamiento</h3>
         <p>Semana a semana encontrarás la sesión grabada para ponerte al día y repasar tanto como desees.</p>
-        <span class="recurso-tag">próximamente</span>
+        <a class="recurso-tag recurso-link" href="#entrenamiento">Ver sesiones →</a>
       </article>
       <article class="recurso-card fade-in">
         <span class="recurso-icon" aria-hidden="true">📖</span>
@@ -485,6 +540,52 @@
         <p>Encuentra aquí el folleto digital "El Discípulo Amado", con lecturas, preguntas y espacio para tus notas. Léelo página por página o descárgalo en PDF.</p>
         <a class="recurso-tag recurso-link" href="#folleto">Ver folleto →</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ENTRENAMIENTO -->
+<section id="entrenamiento">
+  <div class="container">
+    <div class="entre-head fade-in">
+      <span class="eyebrow">aprende</span>
+      <h2>Entrenamiento</h2>
+      <p>Semana a semana encontrarás la sesión grabada para ponerte al día y repasar tanto como desees.</p>
+    </div>
+    <div class="entre-layout fade-in">
+      <div>
+        <div class="video-frame">
+          <iframe id="videoPlayer" src="https://www.youtube-nocookie.com/embed/2cdkrJ7q5_w?rel=0" title="Sesión Uno: Intro. El Evangelio de Juan" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="video-now">
+          <small>Último episodio</small>
+          <h3 id="videoTitle">Sesión Uno: Intro. El Evangelio de Juan</h3>
+        </div>
+      </div>
+      <div class="ep-box">
+        <h3>Todas las sesiones</h3>
+        <!-- Para agregar un episodio nuevo: copia un bloque <li>, cambia data-video (el código después de youtu.be/), data-title y el texto. Pon el más nuevo al final y mueve la marca "active" y data-latest="true" a ese. -->
+        <ul class="ep-list" id="epList">
+          <li>
+            <button type="button" class="ep-item" data-video="QAewuWgPchw" data-title="Sesión Uno: Instrucciones generales">
+              <span class="ep-thumb"><span class="ep-ph" aria-hidden="true"><b>01</b></span><img src="https://i.ytimg.com/vi/QAewuWgPchw/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+              <span class="ep-info">
+                <span class="ep-num">Entrenamiento 1</span>
+                <span class="ep-title">Sesión Uno: Instrucciones generales</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="ep-item active" data-video="2cdkrJ7q5_w" data-title="Sesión Uno: Intro. El Evangelio de Juan" data-latest="true">
+              <span class="ep-thumb"><span class="ep-ph" aria-hidden="true"><b>02</b></span><img src="https://i.ytimg.com/vi/2cdkrJ7q5_w/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+              <span class="ep-info">
+                <span class="ep-num">Entrenamiento 2<span class="ep-new">Último</span></span>
+                <span class="ep-title">Sesión Uno: Intro. El Evangelio de Juan</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -772,6 +873,26 @@
     });
     viewer.tabIndex = 0;
     window.addEventListener('resize', () => go(current()));
+  })();
+
+  // Entrenamiento: cambiar de video desde la lista
+  (function(){
+    const list = document.getElementById('epList');
+    const player = document.getElementById('videoPlayer');
+    const title = document.getElementById('videoTitle');
+    if (!list || !player) return;
+    const label = document.querySelector('.video-now small');
+    list.querySelectorAll('.ep-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        list.querySelectorAll('.ep-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        player.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.video + '?rel=0&autoplay=1';
+        player.title = btn.dataset.title;
+        title.textContent = btn.dataset.title;
+        if (label) label.textContent = btn.dataset.latest ? 'Último episodio' : 'Reproduciendo';
+        document.querySelector('.video-frame').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
   })();
 </script>
 </body>
